@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var app = require('../app.js');
+var config = require('../config/config.js');
+app.listen(config.sqlPort,function(){
+  console.log('app started,listen port'+config.sqlPort)
+})

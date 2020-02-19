@@ -1,0 +1,457 @@
+
+/*
+ * @module: 公共的样式文件
+ * @fileName: index.style
+ * @Description: ChIoT的主题样式表
+ * @Author: ZLL
+ * @Date: 2019-04-02 14:49:56
+ */
+ 
+// *
+//   margin 0;
+//   padding 0;
+body,html
+  font-size: 12px;
+  font-family: "PingFang SC","Microsoft YaHei","微软雅黑","Helvetica Neue",Helvetica,"Hiragino Sans GB",Arial,sans-serif;
+
+/*  ====== 颜色变量 start ====== */
+
+/*  ====== 品牌颜色 ====== */
+$chiotBlue = #005BAC;
+$chiotRed = #E60012;
+$chiotBlack = #221815;
+
+/*  ====== 按钮状态颜色 ====== */
+$successColor = #02DB72;
+$warningColor = #EB6100;
+$dangerColor = #F56C6C;
+$disabledColor = #BFBFBF;
+
+/*  ====== 边框颜色 ====== */
+$borderColor = #DCDFE6;
+
+/*  ====== 背景颜色 ====== */
+$backgroundGray = #F5F7FA;
+
+/*  ====== 文字颜色 ====== */
+$mainTitleColor = #262626;
+$subHeadColor = #8c8c8c;
+$textBodyColor = #595959;
+$textHover = #005BAD;
+$white = #ffffff;
+
+/*  ====== 辅助颜⾊ ====== */
+$chiotSub-20AEE6 = #20AEE6;
+$chiotSub-69A3D7 = #69A3D7;
+$chiotSub-6FBD4B = #6FBD4B;
+$chiotSub-A68727 = #A68727;
+$chiotSub-C7E8FA = #C7E8FA;
+$chiotSub-EAF6FD = #EAF6FD;
+$chiotSub-EB6100 = #EB6100;
+$chiotSub-E1F1EC = #E1F1EC;
+
+/*  ====== 渐变颜⾊ ====== */
+$lightBlueGradation = #004098;
+$darkBlueGradation = #00a7ea;
+$orangeRedGradation = #e60012;
+$lightSkyBlueGradation = #6AC9F3;
+$darkSkyBlueGradation = #02A0E9;
+
+/*  ====== 圆角函数 ====== */
+round-corners(round=4px)
+  border-radius: round
+
+/*  ====== 线性渐变函数 ====== */ 
+linear-gradient()
+  background: -o-linear-gradient(arguments); 
+  background: -moz-linear-gradient(arguments);
+  background: -webkit-linear-gradient(arguments); 
+
+/*  ====== 边框函数 ====== */
+border(borderStyle=solid,borderColor=$borderColor,borderWidth=1px)
+  border-style borderStyle;
+  border-color borderColor;
+  border-width: borderWidth;
+  
+/*  ====== 按钮样式 ====== */
+.cl-btn,.cl-btn-sm,.cl-btn-lg 
+  display inline-block;
+  color $chiotBlack;
+  height auto;
+  font-size: 14px;
+  border()
+  .iot
+    color $textBodyColor;
+    font-size 14px;
+    font-weight 500;
+    padding 0 2px;
+  &.cl-btn-main
+    .iot
+      color $white;    
+
+.is-circle,.is-circle-sm,.is-circle-lg
+  round-corners(50%);
+  font-size 14px;
+  .iot
+    padding 0;
+
+/** 正常按钮 **/
+.cl-btn
+  padding 7.5px 20px;
+
+.is-circle 
+  padding: 9px 10px;   
+
+/** 小号按钮 **/
+.cl-btn-sm,.cl-button-group-sm .cl-btn
+  font-size 12px;
+  padding 7px 20px;
+
+.is-circle-sm 
+  padding 8px 9px;
+  font-size 12px;
+
+/** 大号按钮 **/
+.cl-btn-lg,,.cl-button-group-lg .cl-btn
+  padding 9.5px 20px;
+
+.is-circle-lg
+  padding: 11px 12px;  
+
+/** 主要按钮 **/
+.cl-btn-main
+  background-color $chiotBlue;
+  color $white;
+
+/** 次要按钮 **/
+.cl-btn-custom 
+  box-sizing border-box;
+  background:none;
+    
+/** 成功按钮 **/    
+.cl-btn-success
+  background-color $successColor;
+
+/** 警告按钮 **/
+.cl-btn-warning
+  background-color $warningColor;
+
+/** 危险按钮 **/
+.cl-btn-danger
+  color $dangerColor;
+  background-color $backgroundGray;
+
+/** 虚线按钮 **/
+.cl-btn-dashBorder
+  background-color transparent;
+  border(dashed);
+
+/** 禁止按钮 **/  
+.cl-btn-disabled
+  background-color $backgroundGray;
+  color $disabledColor;
+  cursor not-allowed;
+
+/** 是否是圆角 **/
+.is-round
+  round-corners()
+
+
+.cl-btn-select 
+  width auto;
+  .el-input__inner,.el-input__icon
+    line-height 36px;
+    height 36px;
+  .cl-input 
+    display block;
+    .el-input__icon
+      font-size 14px;
+      padding-right 5px;
+      color $textBodyColor;
+  .el-input__inner
+    height 36px;  
+&.cl-btn-select-sm
+  .cl-input 
+    font-size 12px;
+  .el-input__inner,.el-input__icon
+    line-height 32px;
+    height 32px;
+    font-size 12px;
+  .el-input__inner
+    height 32px;
+&.cl-btn-select-lg
+  .el-input__inner,.el-input__icon
+    line-height 40px;
+    height 40px;
+  .el-input__inner
+    height 40px;      
+
+
+.cl-input 
+  position relative;
+  font-size 14px;
+  display inline-block;
+
+.cl-button-group,.cl-button-group-sm,.cl-button-group-lg
+  display inline-block;
+  vertical-align middle;
+
+  > .cl-btn:not(:last-child)
+    margin-right -1px;
+
+  > .cl-btn:first-child
+    border-top-right-radius 0;
+    border-bottom-right-radius 0;
+    border-right-color $borderColor;
+
+  > .cl-btn:last-child
+    border-top-left-radius 0;
+    border-bottom-left-radius 0;
+    border-left-color $borderColor; 
+    margin-left:0!important;
+  > .cl-btn:not(:first-child):not(:last-child)
+    border-radius 0;
+    border-left-color $borderColor;
+    border-right-color $borderColor;
+
+&.cl-button-group-sm,.cl-button-group-lg
+  > .cl-btn:last-child
+    margin-left: 0!important;
+&.cl-button-group-sm
+  height 32px;
+  line-height 32px;    
+
+
+/*  ====== radio style ====== */
+.el-radio,.el-checkbox
+  color $textBodyColor;
+  .el-radio__input 
+    &.is-checked
+      .el-radio__inner 
+        background $chiotBlue;
+        border-color $chiotBlue;
+    &.is-checked + .el-radio__label
+      color $chiotBlue;
+    &.is-checked.is-disabled 
+      .el-radio__inner
+        background $disabledColor;
+        border-color $borderColor;
+        &::after
+          background-color $backgroundGray;
+    &.is-checked.is-disabled + .el-radio__label
+      color $disabledColor;
+  .el-radio__label
+      font-size 14px;
+  .el-radio__inner 
+    border: 1px solid $borderColor;
+  &.is-bordered.is-checked
+    border-color $chiotBlue
+  &.is-bordered
+      height 36px;
+      padding 10px 20px 0 10px;
+    &.is-bordered-sm
+      height 32px;
+      padding 8px 20px 0 10px
+      .el-radio__label
+        font-size 12px;
+    &.is-bordered-lg
+      height 40px;
+      padding 12px 20px 0 10px;    
+      border-color $borderColor; 
+  &.is-disabled.is-bordered.is-checked
+    background-color $backgroundGray;
+    border-color: $borderColor;
+
+/*  ====== radio list style ====== */
+.cl-list 
+  .cl-list-item
+    padding 18px 9px;
+    margin-bottom 15px;
+    max-width 560px;
+    round-corners(3px);
+    border()
+    display flex;
+    justify-content space-between;
+    align-items center;
+    &.cl-list-selected
+      border(,$chiotBlue,)
+    .el-radio,.el-checkbox
+      margin 0 10px;
+    .list-caption
+      margin 0 20px 0 10px;
+      flex-shrink: 0;
+      width 105px;
+      height 80px;
+      background-color #ccc;
+    .list-caption-body
+        color $subHeadColor;
+        font-size 12px;
+        line-height: 18px;
+        flex auto;
+        height 80px;
+      .caption
+        color $textBodyColor;
+        font-size 14px;
+        margin-bottom:5px;
+
+.cl-list-square
+  .cl-list-item
+    max-width 155px;
+    text-align center;
+    display block;
+    .el-radio &
+      display: block;
+    .list-caption
+      margin 10px auto;
+      width 80px;
+      height 50px;
+    .list-caption-body 
+      height auto;   
+
+/*  ====== checkbox style ====== */
+.el-checkbox
+  color $textBodyColor;
+  &.is-bordered
+    padding 8px 20px 0 10px
+    &.is-bordered-sm
+      padding 6px 20px 0 10px
+    &.is-bordered-lg 
+      padding 10px 20px 0 10px;  
+  .el-checkbox__input.is-checked 
+    .el-checkbox__inner
+      background-color $chiotBlue;
+      border-color $chiotBlue;
+    &.is-disabled
+      .el-checkbox__inner
+        background-color $disabledColor;
+        border-color $disabledColor;
+        &:after
+          border-color $white;   
+  .el-checkbox__input.is-checked + .el-checkbox__label
+    color $chiotBlue;
+  .el-checkbox__input.is-checked.is-disabled + .el-checkbox__label
+    color $disabledColor; 
+
+
+/*  ====== table style ====== */
+.el-table
+  font-size 14px;
+  table
+    width 100%;
+    .isExpand
+      .cl-fold-table
+        i 
+          font-size 12px;
+    .cell
+      position relative;
+      display inline-block;
+      padding-left 10px;
+      padding-right 10px;
+      .caret-wrapper
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        height: 34px;
+        width: 24px;
+        vertical-align: middle;
+        cursor: pointer;
+        overflow: initial;
+        position: relative;
+        .sort-caret
+          width: 0;
+          height: 0;
+          //border: 5px solid transparent;
+          border(,transparent,5px);
+          position: absolute;
+          left: 7px;
+          &.ascending
+            border-bottom-color: #c0c4cc;
+            top: 5px;
+          &.descending
+            border-top-color: #c0c4cc;
+            bottom: 7px;    
+  thead
+    color $subHeadColor
+    .has-head-bg
+      th
+        background #f4f6f9;
+        color $textBodyColor;
+        padding 7.5px 0;
+  th,td  
+    padding: 12.5px 0;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+    border(,,2px);
+    border-width: 0 0 2px 0;
+  th
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+    background-color: $white;
+    font-weight normal;
+    &.ascending
+      .sort-caret.ascending
+        border-bottom-color: $chiotBlue!important;
+    &.descending
+      .sort-caret.descending
+        border-top-color: $chiotBlue!important;    
+        
+  tr
+    .cl-table-column-selection,.isExpand
+      .cell
+        padding-left 14px;
+    td:hover
+      color $chiotBlue;
+      cursor pointer;    
+&.cl-table-base
+  tr         
+    &:last-child
+      td
+        border-bottom: none;
+        color $chiotBlue;
+        i 
+          font-weight 600;  
+  tbody
+    color $textBodyColor;
+&.cl-table-operate
+  .cell
+    .btn-operate
+      color $chiotBlue;
+      padding 0 4px;
+    .status-dot
+      width 6px;
+      height 6px;
+      display inline-block;
+      margin-right 3px;
+      vertical-align middle;
+      round-corners(50%);
+      background-color #ccc;
+      &.status-dot-success
+        background-color $successColor;
+      &.status-dot-warning
+        background-color $warningColor;              
+
+
+/*  ====== 渐变色 ====== */
+
+.lightToDarkBlue
+  linear-gradient: 0deg,$darkBlueGradation,$lightBlueGradation
+
+.orangeToRed
+  linear-gradient: 0deg,$chiotSub-EB6100,$orangeRedGradation
+
+.skyToDarkBlue
+  linear-gradient: 0deg,$lightSkyBlueGradation,$darkSkyBlueGradation     
+
+.aa 
+  font-size 15px
+  
+
+
+
+
+ 
