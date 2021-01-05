@@ -10,7 +10,7 @@
     "dev-build": "vue-cli-service build --mode dev"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "moment": "^2.24.0",
     "postcss-px-to-viewport": "^1.1.0",
